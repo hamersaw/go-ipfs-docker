@@ -4,7 +4,7 @@ Repository deploys an IFPS cluster for benchmarking purposes.
 
 Uses a custom container image based on the [Dockerfile](https://github.com/ipfs/go-ipfs/blob/master/Dockerfile) from [go-ipfs](https://github.com/ipfs/go-ipfs). While the aforementioned work builds from busybox, we use debian bullseye to provide a larger suite of utilities.
 
-# usage
+## usage
     # initialize cluster
     docker-compose up -d
 
@@ -17,3 +17,4 @@ Uses a custom container image based on the [Dockerfile](https://github.com/ipfs/
     docker-compose down
 
 ## todo
+- remove hardcoded paths from docker-compose.yaml

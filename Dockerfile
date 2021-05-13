@@ -28,24 +28,11 @@ RUN set -eux; \
   && cd go-ipfs/ \
   && bash install.sh
 
-# Get the ipfs binary, entrypoint script, and TLS CAs from the build container.
-#COPY --from=0 $SRC_DIR/cmd/ipfs/ipfs /usr/local/bin/ipfs
-#COPY --from=0 $SRC_DIR/start_ipfs /usr/local/bin/start_ipfs
+# Copy entrypoint script
 COPY start_ipfs /usr/local/bin/start_ipfs
-#COPY --from=0 /tmp/su-exec/su-exec-static /sbin/su-exec
-
-# Add suid bit on fusermount so it will run properly
-#RUN chmod 4755 /usr/local/bin/fusermount
 
 # Fix permissions on start_ipfs (ignore the build machine's permissions)
 RUN chmod 0755 /usr/local/bin/start_ipfs
-
-# This shared lib (part of glibc) doesn't seem to be included with busybox.
-#COPY --from=0 /lib/*-linux-gnu*/libdl.so.2 /lib/
-
-# Copy over SSL libraries.
-#COPY --from=0 /usr/lib/*-linux-gnu*/libssl.so* /usr/lib/
-#COPY --from=0 /usr/lib/*-linux-gnu*/libcrypto.so* /usr/lib/
 
 # Swarm TCP; should be exposed to the public
 EXPOSE 4001
@@ -61,7 +48,6 @@ EXPOSE 8081
 # Create the fs-repo directory and switch to a non-privileged user.
 ENV IPFS_PATH /data/ipfs
 RUN mkdir -p $IPFS_PATH \
-  #&& adduser -D -h $IPFS_PATH -u 1000 -G users ipfs \
   && adduser --home $IPFS_PATH --uid 1000 --ingroup users ipfs \
   && chown ipfs:users $IPFS_PATH
 
