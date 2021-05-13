@@ -1,0 +1,114 @@
+version: "3.0"
+services:
+  ipfs0:
+    container_name: ipfs0
+    image: hamersaw/go-ipfs:latest
+    ports:
+      - "4001:4001"
+      - "127.0.0.1:5001:5001"
+      - "127.0.0.1:8080:8080"
+    volumes:
+      - /home/hamersaw/downloads/:/export
+      - /home/hamersaw/downloads/ipfs/0:/data/ipfs
+    environment:
+      - IPFS_SWARM_KEY=/key/swarm/psk/1.0.0/\n/base16/\nb2dafe9eeafb27a0d541a9d290282ad6d3e20c7ead7c1b323f991535a7f44ff5
+    cap_add:
+      - NET_ADMIN
+  ipfs1:
+    container_name: ipfs1
+    image: hamersaw/go-ipfs:latest
+    ports:
+      - "4101:4001"
+      - "127.0.0.1:5101:5001"
+      - "127.0.0.1:8180:8080"
+    volumes:
+      - /home/hamersaw/downloads/:/export
+      - /home/hamersaw/downloads/ipfs/1:/data/ipfs
+    environment:
+      - IPFS_SWARM_KEY=/key/swarm/psk/1.0.0/\n/base16/\nb2dafe9eeafb27a0d541a9d290282ad6d3e20c7ead7c1b323f991535a7f44ff5
+    cap_add:
+      - NET_ADMIN
+  ipfs2:
+    container_name: ipfs2
+    image: hamersaw/go-ipfs:latest
+    ports:
+      - "4201:4001"
+      - "127.0.0.1:5201:5001"
+      - "127.0.0.1:8280:8080"
+    volumes:
+      - /home/hamersaw/downloads/:/export
+      - /home/hamersaw/downloads/ipfs/2:/data/ipfs
+    environment:
+      - IPFS_SWARM_KEY=/key/swarm/psk/1.0.0/\n/base16/\nb2dafe9eeafb27a0d541a9d290282ad6d3e20c7ead7c1b323f991535a7f44ff5
+    cap_add:
+      - NET_ADMIN
+  ipfs3:
+    container_name: ipfs3
+    image: hamersaw/go-ipfs:latest
+    ports:
+      - "4301:4001"
+      - "127.0.0.1:5301:5001"
+      - "127.0.0.1:8380:8080"
+    volumes:
+      - /home/hamersaw/downloads/:/export
+      - /home/hamersaw/downloads/ipfs/3:/data/ipfs
+    environment:
+      - IPFS_SWARM_KEY=/key/swarm/psk/1.0.0/\n/base16/\nb2dafe9eeafb27a0d541a9d290282ad6d3e20c7ead7c1b323f991535a7f44ff5
+    cap_add:
+      - NET_ADMIN
+  ipfs4:
+    container_name: ipfs4
+    image: hamersaw/go-ipfs:latest
+    ports:
+      - "4401:4001"
+      - "127.0.0.1:5401:5001"
+      - "127.0.0.1:8480:8080"
+    volumes:
+      - /home/hamersaw/downloads/:/export
+      - /home/hamersaw/downloads/ipfs/4:/data/ipfs
+    environment:
+      - IPFS_SWARM_KEY=/key/swarm/psk/1.0.0/\n/base16/\nb2dafe9eeafb27a0d541a9d290282ad6d3e20c7ead7c1b323f991535a7f44ff5
+    cap_add:
+      - NET_ADMIN
+  ipfs5:
+    container_name: ipfs5
+    image: hamersaw/go-ipfs:latest
+    ports:
+      - "4501:4001"
+      - "127.0.0.1:5501:5001"
+      - "127.0.0.1:8580:8080"
+    volumes:
+      - /home/hamersaw/downloads/:/export
+      - /home/hamersaw/downloads/ipfs/5:/data/ipfs
+    environment:
+      - IPFS_SWARM_KEY=/key/swarm/psk/1.0.0/\n/base16/\nb2dafe9eeafb27a0d541a9d290282ad6d3e20c7ead7c1b323f991535a7f44ff5
+    cap_add:
+      - NET_ADMIN
+  ipfs6:
+    container_name: ipfs6
+    image: hamersaw/go-ipfs:latest
+    ports:
+      - "4601:4001"
+      - "127.0.0.1:5601:5001"
+      - "127.0.0.1:8680:8080"
+    volumes:
+      - /home/hamersaw/downloads/:/export
+      - /home/hamersaw/downloads/ipfs/6:/data/ipfs
+    environment:
+      - IPFS_SWARM_KEY=/key/swarm/psk/1.0.0/\n/base16/\nb2dafe9eeafb27a0d541a9d290282ad6d3e20c7ead7c1b323f991535a7f44ff5
+    cap_add:
+      - NET_ADMIN
+  ipfs7:
+    container_name: ipfs7
+    image: hamersaw/go-ipfs:latest
+    ports:
+      - "4701:4001"
+      - "127.0.0.1:5701:5001"
+      - "127.0.0.1:8780:8080"
+    volumes:
+      - /home/hamersaw/downloads/:/export
+      - /home/hamersaw/downloads/ipfs/7:/data/ipfs
+    environment:
+      - IPFS_SWARM_KEY=/key/swarm/psk/1.0.0/\n/base16/\nb2dafe9eeafb27a0d541a9d290282ad6d3e20c7ead7c1b323f991535a7f44ff5
+    cap_add:
+      - NET_ADMIN
